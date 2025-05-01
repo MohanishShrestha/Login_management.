@@ -1,0 +1,146 @@
+login management
+1) Register
+2) login 
+3) my profile
+4) my profile update
+5) update password
+
+6) forget nd reset password
+7) Delete account/user 
+8) read all user
+9) read specific user
+
+
+1)Register
+=> save data to database(register process)
+    fullName
+    email
+    password
+    dob
+    gender
+    role(admin,customer,superAdmin)
+
+
+=> verify email
+    postman token
+    get tokenverify token
+    get _id from token
+    make is Verified true
+
+=> login
+    email and password
+    check if that email exist
+        if email not found throw error
+    check if that email is Verified
+        if not throw error
+    check if password match
+        if not throw error  
+    generate token  
+        attached _id
+    send token to fornt end
+
+
+=> my profile
+    pass token from postman
+    get token from postman
+        validate token (if token is not valid throw error)
+        get id from token
+
+    find the details by using that _id
+
+
+=> update profile
+    pass token from postman
+    pass that token from isAuthenticated 
+    get _id
+    update profile
+    send response
+
+
+=> update password
+    pass token
+    isAuthenticated
+    _id
+    get body form postman
+            oldpassword
+            newpassword
+
+    check if oldpassword match with data base password
+    hash newpassword
+    save it to database
+
+
+=> readall user
+
+
+2xx
+create or update = 201
+read or Delete= 200
+
+=>error
+4xx
+    400
+    401 => token is not valid, crenditial not match
+    403=> token valid but not authorized
+    409=> conflict (dublicate)
+    404=> api not found
+
+
+forget password process
+    forget password
+        pass email form postman
+        get email 
+        check if email exist in database(if not throw error status code 404)
+        send email with link(forntend link with token)
+        send response
+
+    reset password
+        pass token from postman
+        pass password from postman
+        pass through isAuthenticated
+        get _id
+        hash password
+        update that _id
+        send response
+
+
+authorization
+    role    
+        admin = user read
+        superAdmin = user read, delete user
+        user = doesnt not have permission to read user
+
+isAuthenticated => middleware
+postman pas token
+isAuthenticated
+_id
+read details of that _id
+get role of details
+
+
+if the role is either admin or superAdmin do next
+else throw error with status code 403
+
+
+
+mongodb
+    website => we create  cluster(big data ) =>link => 
+    inside cluster you can ceate different sub database
+    it is used to store data at cloud
+
+what we do
+    we create account at mongodb atlast
+    sign in
+    create cluster
+        every cluster has username and password
+    get the link of cluster
+    paste the link of cluster to our application
+
+
+    search mongodb atlast
+        signin(if you are not yet register first ign up)
+        while sign up use google
+
+
+
+
