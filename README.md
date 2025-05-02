@@ -1,10 +1,13 @@
-# Login management system(Backend)
-<h1 align="center"># Login management system(Backend)</h1>
+
+<h1 align="center">Login management system(Backend)</h1>
 <br>
 
 ## 🔐 Login Management System
-A complete user login and management system built with Node.js, Express, and MongoDB Atlas, including features like user registration, email verification, login, profile update, password management, and admin-level user controls.
-
+A complete user login and management system built with 
+Node.js, Express, and MongoDB Atlas, including features 
+like user registration, email verification, login, profile 
+update, password management, and admin-level user controls.
+<br>
 
 ## 🧰 Tech Stack
   Language: JavaScript (Node.js)
@@ -12,162 +15,159 @@ A complete user login and management system built with Node.js, Express, and Mon
   Database: MongoDB Atlas
   Auth: JWT (JSON Web Tokens)
   API Testing: Postman
-
+<br>
 
 ## 📁 Features
 
 ### ✅ 1. Register
-Data Fields: fullName, email, password, dob, gender, role (admin | customer | superAdmin)
+Data Fields:  fullName, 
+              email, 
+              password, 
+              dob, 
+              gender, 
+              role (admin | customer | superAdmin)
 
-Process:
+**Process:**
+    Save user to MongoDB
+    Send email verification token
 
-Save user to MongoDB
+### ✅ 2. Email Verification
+    Token verification via Postman
 
-Send email verification token
+    Extract _id from token
 
-✅ 2. Email Verification
-Token verification via Postman
+    Set isVerified: true
 
-Extract _id from token
+### ✅ 3. Login
+    Input: email, password
 
-Set isVerified: true
+    Validations:
 
-✅ 3. Login
-Input: email, password
+    Email exists
 
-Validations:
+    Email is verified
 
-Email exists
+    Password matches
 
-Email is verified
+    Output:
 
-Password matches
+    JWT token with user _id
 
-Output:
+### ✅ 4. My Profile
+    Pass token in Postman
 
-JWT token with user _id
+    Middleware: isAuthenticated
 
-✅ 4. My Profile
-Pass token in Postman
+    Fetch user by _id from token
 
-Middleware: isAuthenticated
+### ✅ 5. Update Profile
+    Token required
 
-Fetch user by _id from token
+    Route protected by isAuthenticated
 
-✅ 5. Update Profile
-Token required
+    Update user fields and respond
 
-Route protected by isAuthenticated
+### ✅ 6. Update Password
+    Token + Old & New Password in body
 
-Update user fields and respond
+    Validate old password
 
-✅ 6. Update Password
-Token + Old & New Password in body
+    Hash new password & update
 
-Validate old password
+### ✅ 7. Forgot & Reset Password
+   ** Forgot:**
+    Post email
 
-Hash new password & update
+    Validate existence
 
-✅ 7. Forgot & Reset Password
-Forgot:
+    Send token in reset link
 
-Post email
+   ** Reset:**
+    Post new password and token
 
-Validate existence
+    Validate token and update password
 
-Send token in reset link
+### ✅ 8. Delete User (Only SuperAdmin)
+    Role-based access
 
-Reset:
+    Token required
 
-Post new password and token
+    Only superAdmin can delete users
 
-Validate token and update password
+### ✅ 9. Read All / Specific Users
+    Access allowed for admin and superAdmin
 
-✅ 8. Delete User (Only SuperAdmin)
-Role-based access
+    Role checked via middleware
 
-Token required
+## 🔐 Authorization Middleware
+    **Middleware:** isAuthenticated
 
-Only superAdmin can delete users
+        Checks JWT token validity
 
-✅ 9. Read All / Specific Users
-Access allowed for admin and superAdmin
+        Extracts user _id
 
-Role checked via middleware
+    **Role Handling:**
 
-🔐 Authorization Middleware
-Middleware: isAuthenticated
+        **user: **no access to read users
 
-Checks JWT token validity
+        **admin:** can read users
 
-Extracts user _id
+        **superAdmin:** can read + delete users
 
-Role Handling:
+        Unauthorized attempts return status 403
 
-user: no access to read users
 
-admin: can read users
-
-superAdmin: can read + delete users
-
-Unauthorized attempts return status 403
-
-🔢 API Response Codes
-Code	Meaning
-200	OK (read, delete)
-201	Created / Updated
-400	Bad request
-401	Unauthorized (token invalid/expired)
-403	Forbidden (authenticated but not allowed)
-404	Not found
-409	Conflict (duplicate email, etc.)
-
-🌐 MongoDB Atlas Setup
-Visit MongoDB Atlas
-Sign up / Sign in
-Create a cluster
-Add your username/password
-Get the connection string
-Use it in your project (e.g., .env file)
-
-🚀 Running the App
-🔧 Install Dependencies
+## 🚀 Running the App
+### 🔧 Install Dependencies
+<br>
       ```npm install```
 
-▶️ Start Server
+## ▶️ Start Server
+<br>
      ```npm run dev```
 
-📂 Folder Structure
+## 📂 Folder Structure
 project-root/
+
 ├── src/
+
 │   ├── connectToDb/
+
 │   │   └── connectToMongoDb.js
+
 │   ├── middleware/
+
 │   │   ├── errorMiddleware.js
+
 │   │   └── pageNotFound.js
+
 │   ├── Router/
+
 │   │   ├── randomRouter.js
+
 │   │   └── webRouter.js
+
 │   ├── constant.js
+
 ├── index.js
 
 
-#🧪 Example Postman Usage
-Register: POST /web/register
+## 🧪 Example Postman Usage
+   ** Register:** POST /web/register
 
-Verify Email: GET /web/verify-email?token=<jwt>
+    **Verify Email:** GET /web/verify-email?token=<jwt>
 
-Login: POST /web/login
+   ** Login:** POST /web/login
 
-My Profile: GET /web/me with Bearer <token>
+    **My Profile:** GET /web/me with Bearer <token>
 
-Update Profile: PATCH /web/update-profile
+    **Update Profile:** PATCH /web/update-profile
 
-Update Password: PATCH /web/update-password
+    **Update Password:** PATCH /web/update-password
 
-Forgot Password: POST /web/forgot-password
+    **Forgot Password:** POST /web/forgot-password
 
-Reset Password: POST /web/reset-password
+    **Reset Password:** POST /web/reset-password
 
 Read All Users: GET /web/users
 
