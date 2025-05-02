@@ -121,12 +121,12 @@ Data Fields:  fullName,
 
 ### 🔧 Install Dependencies
 <br>
-        npm install
+        `npm install`
       
 
 ## ▶️ Start Server
 <br>
-        npm run dev
+        `npm run dev`
         
       
 
