@@ -1,4 +1,4 @@
-Login management system(Backend)
+#Login management system(Backend)
 
 🔐 Login Management System
 A complete user login and management system built with Node.js, Express, and MongoDB Atlas, including features like user registration, email verification, login, profile update, password management, and admin-level user controls.
@@ -119,32 +119,20 @@ Code	Meaning
 
 🌐 MongoDB Atlas Setup
 Visit MongoDB Atlas
-
 Sign up / Sign in
-
 Create a cluster
-
 Add your username/password
-
 Get the connection string
-
 Use it in your project (e.g., .env file)
 
 🚀 Running the App
 🔧 Install Dependencies
-bash
-Copy
-Edit
-npm install
+      npm install
+
 ▶️ Start Server
-bash
-Copy
-Edit
-npm run dev
+      npm run dev
+
 📂 Folder Structure
-pgsql
-Copy
-Edit
 project-root/
 ├── src/
 │   ├── connectToDb/
@@ -157,7 +145,9 @@ project-root/
 │   │   └── webRouter.js
 │   ├── constant.js
 ├── index.js
-🧪 Example Postman Usage
+
+
+#🧪 Example Postman Usage
 Register: POST /web/register
 
 Verify Email: GET /web/verify-email?token=<jwt>
@@ -178,11 +168,4 @@ Read All Users: GET /web/users
 
 Delete User: DELETE /web/user/:id
 
-🔐 Google Sign-In
-(If implemented on frontend)
 
-Use Google to sign up
-
-Authenticate and retrieve token from frontend
-
-Send token to backend for verification
