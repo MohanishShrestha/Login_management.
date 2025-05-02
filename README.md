@@ -131,10 +131,10 @@ Use it in your project (e.g., .env file)
 
 🚀 Running the App
 🔧 Install Dependencies
-      npm install
+      ```npm install```
 
 ▶️ Start Server
-      npm run dev
+     ```npm run dev```
 
 📂 Folder Structure
 project-root/
