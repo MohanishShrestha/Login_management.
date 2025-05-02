@@ -75,14 +75,14 @@ Data Fields:  fullName,
     Hash new password & update
 
 ### ✅ 7. Forgot & Reset Password
-   ** Forgot:**
+   **Forgot:**
     Post email
 
     Validate existence
 
     Send token in reset link
 
-   ** Reset:**
+   Reset:
     Post new password and token
 
     Validate token and update password
@@ -100,33 +100,35 @@ Data Fields:  fullName,
     Role checked via middleware
 
 ## 🔐 Authorization Middleware
-    **Middleware:** isAuthenticated
+    Middleware: isAuthenticated
 
         Checks JWT token validity
 
         Extracts user _id
 
-    **Role Handling:**
+    Role Handling:
 
-        **user: **no access to read users
+        user: no access to read users
 
-        **admin:** can read users
+        admin: can read users
 
-        **superAdmin:** can read + delete users
+        superAdmin: can read + delete users
 
         Unauthorized attempts return status 403
 
 
 ## 🚀 Running the App
+
 ### 🔧 Install Dependencies
 <br>
-      ```npm install```
+      npm install
 
 ## ▶️ Start Server
 <br>
-     ```npm run dev```
+      npm run dev
 
 ## 📂 Folder Structure
+
 project-root/
 
 ├── src/
@@ -151,23 +153,23 @@ project-root/
 
 ├── index.js
 
-
+<br>
 ## 🧪 Example Postman Usage
-   ** Register:** POST /web/register
+   Register: POST /web/register
 
-    **Verify Email:** GET /web/verify-email?token=<jwt>
+   Verify Email: GET /web/verify-email?token=<jwt>
 
-   ** Login:** POST /web/login
+    Login: POST /web/login
 
-    **My Profile:** GET /web/me with Bearer <token>
+    My Profile: GET /web/me with Bearer <token>
 
-    **Update Profile:** PATCH /web/update-profile
+    Update Profile: PATCH /web/update-profile
 
-    **Update Password:** PATCH /web/update-password
+    Update Password: PATCH /web/update-password
 
-    **Forgot Password:** POST /web/forgot-password
+    Forgot Password: POST /web/forgot-password
 
-    ** Reset Password: ** POST /web/reset-password
+    Reset Password: POST /web/reset-password
     
     read all users: GET /web/users
     
