@@ -167,10 +167,13 @@ project-root/
 
     **Forgot Password:** POST /web/forgot-password
 
-    **Reset Password:** POST /web/reset-password
+    ** Reset Password: ** POST /web/reset-password
+    
+    read all users: GET /web/users
+    
+    delete user: DELETE /web/user/:id
+    
 
-Read All Users: GET /web/users
 
-Delete User: DELETE /web/user/:id
 
 
