@@ -1,9 +1,9 @@
 # Login management system(Backend)
 
-🔐 Login Management System
+## 🔐 Login Management System
 A complete user login and management system built with Node.js, Express, and MongoDB Atlas, including features like user registration, email verification, login, profile update, password management, and admin-level user controls.
 
-🧰 Tech Stack
+## 🧰 Tech Stack
   Language: JavaScript (Node.js)
   Backend Framework: Express.js
   Database: MongoDB Atlas
