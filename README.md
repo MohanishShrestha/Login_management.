@@ -10,10 +10,10 @@ update, password management, and admin-level user controls.
 <br>
 
 ## 🧰 Tech Stack
-  Language: JavaScript (Node.js)
-  Backend Framework: Express.js
-  Database: MongoDB Atlas
-  Auth: JWT (JSON Web Tokens)
+  Language: JavaScript (Node.js), 
+  Backend Framework: Express.js, 
+  Database: MongoDB Atlas, 
+  Auth: JWT (JSON Web Tokens), 
   API Testing: Postman
 <br>
 
