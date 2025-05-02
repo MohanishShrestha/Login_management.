@@ -1,4 +1,4 @@
-#Login management system(Backend)
+# Login management system(Backend)
 
 🔐 Login Management System
 A complete user login and management system built with Node.js, Express, and MongoDB Atlas, including features like user registration, email verification, login, profile update, password management, and admin-level user controls.
@@ -11,6 +11,7 @@ A complete user login and management system built with Node.js, Express, and Mon
   API Testing: Postman
 
 📁 Features
+
 ✅ 1. Register
 Data Fields: fullName, email, password, dob, gender, role (admin | customer | superAdmin)
 
