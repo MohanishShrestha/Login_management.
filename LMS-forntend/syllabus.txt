@@ -1,0 +1,13 @@
+Network 
+
+    header
+        url,
+        method,
+        status
+
+    payload
+        data sent by forntend
+
+    preview
+        data sent by backend
+
