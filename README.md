@@ -1,5 +1,5 @@
 
-<h1 align="center">Login management system(Backend)</h1>
+<h1 align="center">Login management system</h1>
 <br>
 
 ## 🔐 Login Management System
